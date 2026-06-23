@@ -1,0 +1,10 @@
+node_modules/
+dist/
+assets/*.map
+.env
+.DS_Store
+.idea/
+.vscode/
+.shopify/
+.cache/
+*.log

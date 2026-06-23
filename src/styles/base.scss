@@ -1,0 +1,31 @@
+// SoftGlow Collective - base tokens
+$blush-pink: #F6D7D9;
+$cream-white: #FFF8F2;
+$soft-beige: #EFE7DA;
+$warm-gold: #CFA56A;
+$brand-font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+$brand-font-serif: "Playfair Display", Georgia, "Times New Roman", serif;
+
+:root {
+  --color-blush: #F6D7D9;
+  --color-cream: #FFF8F2;
+  --color-beige: #EFE7DA;
+  --color-gold: #CFA56A;
+}
+
+html, body {
+  font-family: $brand-font-sans;
+  background: var(--color-cream);
+  color: #111;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-family: $brand-font-serif;
+  color: #111;
+}
+
+a {
+  color: $warm-gold;
+  text-decoration: none;
+}

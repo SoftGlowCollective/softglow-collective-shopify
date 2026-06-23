@@ -1,0 +1,22 @@
+{%- assign product = product or section.settings.product -%}
+<div class="product-card" aria-label="{{ product.title }}">
+  <a href="{{ product.url }}" class="product-card__link">
+    <div class="product-card__media">
+      {% if product.featured_image %}
+        <img src="{{ product.featured_image | img_url: '600x' }}" alt="{{ product.title }}" loading="lazy" />
+      {% else %}
+        <div class="product-card__placeholder" style="background:#f6f6f6; height:200px;"></div>
+      {% endif %}
+    </div>
+    <div class="product-card__meta">
+      <h3 class="product-card__title">{{ product.title }}</h3>
+      <div class="product-card__price">
+        {% if product.price_varies %}
+          {{ product.price_min | money }} - {{ product.price_max | money }}
+        {% else %}
+          {{ product.price | money }}
+        {% endif %}
+      </div>
+    </div>
+  </a>
+</div>

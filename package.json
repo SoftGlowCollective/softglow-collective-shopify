@@ -1,0 +1,17 @@
+{
+  "name": "softglow-collective-theme",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build:css": "sass src/styles:assets --style=compressed",
+    "build:js": "esbuild src/scripts/theme.js --bundle --outfile=assets/theme.js --minify",
+    "build": "npm run build:css && npm run build:js",
+    "watch": "npm run build && chokidar \"src/**/*\" -c \"npm run build\"",
+    "start": "npm run watch"
+  },
+  "devDependencies": {
+    "sass": "^1.68.0",
+    "esbuild": "^0.18.11",
+    "chokidar-cli": "^3.0.0"
+  }
+}

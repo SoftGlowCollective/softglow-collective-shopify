@@ -1,0 +1,49 @@
+{%- comment -%}
+Pixels / GTM placeholder snippet.
+Usage:
+- Edit this file to paste your pixel snippets (Meta / TikTok / GA4).
+- Then include in layout/theme.liquid:
+  - in <head>: {% render 'pixels' %}
+  - or for body tags move parts into appropriate places.
+Notes:
+- For the quick start below, replace YOUR_META_PIXEL_ID, YOUR_TIKTOK_PIXEL_ID, YOUR_GA_MEASUREMENT_ID.
+{%- endcomment -%}
+
+{%- comment -%} Meta Pixel (paste the full pixel code here) {%- endcomment -%}
+<script>
+  /* Meta Pixel - replace with your actual pixel code */
+  (function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)})(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', 'YOUR_META_PIXEL_ID');
+  fbq('track', 'PageView');
+</script>
+
+{%- comment -%} TikTok Pixel (minimal snippet) {%- endcomment -%}
+<script>
+  /* TikTok Pixel - replace with actual pixel code */
+  !function (w, d, t) {
+    w.TiktokAnalyticsObject = t; var ttq = w[t] = w[t] || []; ttq.methods = ["track","page"]; ttq.setAndDefer = function (t, e) { t[e] = function () { t.push([e].concat(Array.prototype.slice.call(arguments, 0))) } };
+    for (var i = 0; i < ttq.methods.length; i++) { ttq.setAndDefer(ttq, ttq.methods[i]) }
+    ttq.load = function (e, n) { var i = "https://analytics.tiktok.com/i18n/pixel/events.js"; ttq._loadOptions = n || {}; var o = d.createElement("script"); o.async = !0; o.src = i; var a = d.getElementsByTagName("script")[0]; a.parentNode.insertBefore(o, a); ttq._i = ttq._i || {}; ttq._i[e] = []; ttq._i[e]._u = i; ttq._t = ttq._t || {}; ttq._t[e] = +new Date; ttq.page(); };
+    ttq.load('YOUR_TIKTOK_PIXEL_ID');
+    ttq.page();
+  }(window, document, 'ttq');
+</script>
+
+{%- comment -%} GA4 (measurement ID) {%- endcomment -%}
+<script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);} 
+  gtag('js', new Date());
+  gtag('config', 'GA_MEASUREMENT_ID'); // replace GA_MEASUREMENT_ID
+</script>
+
+{%- comment -%} Google Tag Manager placeholder (if you use GTM, paste container snippet here) {%- endcomment -%}
+<!-- GTM container: paste container code here if using GTM -->

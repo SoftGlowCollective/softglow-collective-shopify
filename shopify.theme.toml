@@ -1,0 +1,7 @@
+name = "SoftGlow Collective - Theme"
+version = "0.1.0"
+# store = "your-store.myshopify.com" # set when using shopify CLI or via env
+[theme]
+  id = ""
+  role = "unpublished"
+  publish = false
