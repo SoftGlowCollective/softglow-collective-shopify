@@ -1,0 +1,74 @@
+# ✨ SoftGlow Collective – Shopify Store
+
+Welcome to the official repository for **SoftGlow Collective**, a modern beauty, skincare, and self-care ecommerce brand built for a luxury shopping experience.
+
+---
+
+## 🌸 About The Brand
+
+SoftGlow Collective is a beauty and lifestyle store focused on delivering trending skincare, beauty tools, wellness essentials, and self-care products at affordable prices.
+
+Our goal is to create a **clean, elegant, and high-converting shopping experience** that makes self-care accessible to everyone.
+
+---
+
+## 🛍️ Store Features
+
+- Luxury-inspired Shopify storefront design
+- Mobile-first responsive layout
+- High-converting product pages
+- Best Sellers & Trending collections
+- Customer reviews & trust badges
+- Email signup & marketing integration
+- Secure Shopify checkout system
+- Fast-loading, optimized theme structure
+
+---
+
+## 💖 Product Categories
+
+- Skincare Essentials  
+- Beauty Tools  
+- Self-Care & Wellness  
+- Hair Care Accessories  
+- Trending TikTok Products  
+- Best Sellers Collection  
+
+---
+
+## 🎨 Brand Identity
+
+SoftGlow Collective is built around soft, elegant aesthetics designed to feel premium and calming.
+
+**Color Palette:**
+- Blush Pink  
+- Cream White  
+- Soft Beige  
+- Warm Gold  
+
+**Brand Style:**
+Minimal • Clean • Luxury • Feminine • Modern
+
+---
+
+## 🚀 Installation / Setup (Shopify)
+
+1. Install Shopify theme (Dawn or custom premium theme)
+2. Upload branding assets from `/assets` folder
+3. Configure collections:
+   - Best Sellers
+   - Skincare
+   - Beauty Tools
+   - Self-Care Essentials
+4. Set homepage sections:
+   - Hero Banner
+   - Featured Products
+   - Collections Grid
+   - Customer Reviews
+   - Email Signup
+5. Connect Shopify Payments
+6. Launch store 🚀
+
+---
+
+## 📦 Project Structure
