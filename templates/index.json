@@ -1,0 +1,204 @@
+{% layout 'theme' %}
+
+<main id="MainContent" class="content-for-index">
+  {% for block in section.blocks %}
+    {% case block.type %}
+      {% when 'hero' %}
+        <div class="hero-section" style="background-color: {{ block.settings.bg_color }}">
+          <div class="hero-content">
+            {% if block.settings.hero_image %}
+              <img src="{{ block.settings.hero_image | image_url: width: 1920 }}" alt="{{ block.settings.hero_title }}" class="hero-image">
+            {% endif %}
+            <div class="hero-text">
+              <h1 class="hero-title">{{ block.settings.hero_title }}</h1>
+              <p class="hero-subtitle">{{ block.settings.hero_subtitle }}</p>
+              {% if block.settings.cta_text %}
+                <a href="{{ block.settings.cta_link }}" class="button button-primary">{{ block.settings.cta_text }}</a>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      {% when 'featured_products' %}
+        <section class="featured-products-section">
+          <div class="container">
+            <h2 class="section-title">{{ block.settings.title }}</h2>
+            <p class="section-subtitle">{{ block.settings.subtitle }}</p>
+            
+            <div class="products-grid">
+              {% for product in collections[block.settings.collection].products limit: 6 %}
+                {% include 'product-card', product: product %}
+              {% endfor %}
+            </div>
+            
+            {% if block.settings.view_all_link %}
+              <div class="view-all-container">
+                <a href="{{ block.settings.view_all_link }}" class="button button-secondary">View All Products</a>
+              </div>
+            {% endif %}
+          </div>
+        </section>
+      {% when 'testimonials' %}
+        <section class="testimonials-section">
+          <div class="container">
+            <h2 class="section-title">{{ block.settings.title }}</h2>
+            <div class="testimonials-grid">
+              {% for i in (1..3) %}
+                {% if block.settings["testimonial_" | append: i | append: "_text"] %}
+                  <div class="testimonial-card">
+                    <div class="stars">
+                      {% for j in (1..5) %}
+                        ⭐
+                      {% endfor %}
+                    </div>
+                    <p class="testimonial-text">"{{ block.settings["testimonial_" | append: i | append: "_text"] }}"</p>
+                    <p class="testimonial-author">— {{ block.settings["testimonial_" | append: i | append: "_author"] }}</p>
+                  </div>
+                {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+        </section>
+    {% endcase %}
+  {% endfor %}
+</main>
+
+{% schema %}
+{
+  "name": "Home Page",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "hero",
+      "name": "Hero Banner",
+      "settings": [
+        {
+          "type": "text",
+          "id": "hero_title",
+          "label": "Hero Title",
+          "default": "Glow From Within"
+        },
+        {
+          "type": "text",
+          "id": "hero_subtitle",
+          "label": "Hero Subtitle",
+          "default": "Luxury skincare for the modern you"
+        },
+        {
+          "type": "image_picker",
+          "id": "hero_image",
+          "label": "Hero Image"
+        },
+        {
+          "type": "color",
+          "id": "bg_color",
+          "label": "Background Color",
+          "default": "#FFF8F2"
+        },
+        {
+          "type": "text",
+          "id": "cta_text",
+          "label": "CTA Button Text",
+          "default": "Shop Now"
+        },
+        {
+          "type": "url",
+          "id": "cta_link",
+          "label": "CTA Button Link"
+        }
+      ]
+    },
+    {
+      "type": "featured_products",
+      "name": "Featured Products",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Section Title",
+          "default": "Our Bestsellers"
+        },
+        {
+          "type": "text",
+          "id": "subtitle",
+          "label": "Section Subtitle",
+          "default": "Discover our most loved skincare essentials"
+        },
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
+        },
+        {
+          "type": "url",
+          "id": "view_all_link",
+          "label": "View All Link"
+        }
+      ]
+    },
+    {
+      "type": "testimonials",
+      "name": "Customer Testimonials",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Section Title",
+          "default": "Loved by Our Community"
+        },
+        {
+          "type": "text",
+          "id": "testimonial_1_text",
+          "label": "Testimonial 1",
+          "default": "The best skincare I've ever tried! My skin has never looked better."
+        },
+        {
+          "type": "text",
+          "id": "testimonial_1_author",
+          "label": "Testimonial 1 Author",
+          "default": "Sarah M."
+        },
+        {
+          "type": "text",
+          "id": "testimonial_2_text",
+          "label": "Testimonial 2",
+          "default": "Pure luxury! Worth every penny and delivers amazing results."
+        },
+        {
+          "type": "text",
+          "id": "testimonial_2_author",
+          "label": "Testimonial 2 Author",
+          "default": "Jessica L."
+        },
+        {
+          "type": "text",
+          "id": "testimonial_3_text",
+          "label": "Testimonial 3",
+          "default": "I'm obsessed! The quality is incredible and customer service is top-notch."
+        },
+        {
+          "type": "text",
+          "id": "testimonial_3_author",
+          "label": "Testimonial 3 Author",
+          "default": "Emma T."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Home",
+      "blocks": [
+        {
+          "type": "hero"
+        },
+        {
+          "type": "featured_products"
+        },
+        {
+          "type": "testimonials"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
