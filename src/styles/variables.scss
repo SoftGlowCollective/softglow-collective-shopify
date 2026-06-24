@@ -1,0 +1,123 @@
+// Soft Glow Collective - Brand Colors & Variables
+
+// Colors
+$color-primary: #B8A0D4;      // Bluish Pink
+$color-primary-light: #D4A9B8; // Bluish Pink Light
+$color-accent: #D4AF37;        // Gold
+$color-white: #FFFFFF;         // White
+$color-background: #FFF8F2;    // Cream
+$color-text: #2C2C2C;          // Charcoal
+$color-border: #F5F5F5;        // Light Gray
+
+// Typography
+$font-heading: 'Playfair Display', serif;
+$font-body: 'Inter', sans-serif;
+
+// Font Sizes
+$font-size-h1: 2.75rem;    // 44px
+$font-size-h2: 2.25rem;    // 36px
+$font-size-h3: 1.75rem;    // 28px
+$font-size-body: 1rem;     // 16px
+$font-size-small: 0.875rem; // 14px
+
+// Line Heights
+$line-height-heading: 1.2;
+$line-height-body: 1.6;
+
+// Spacing
+$spacing-xs: 0.5rem;   // 8px
+$spacing-sm: 1rem;     // 16px
+$spacing-md: 1.5rem;   // 24px
+$spacing-lg: 2rem;     // 32px
+$spacing-xl: 3rem;     // 48px
+$spacing-xxl: 4rem;    // 64px
+
+// Border Radius
+$radius-sm: 4px;
+$radius-md: 8px;
+$radius-lg: 12px;
+
+// Shadows
+$shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+$shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+$shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+
+// Transitions
+$transition-default: all 0.3s ease;
+$transition-fast: all 0.15s ease;
+
+// Breakpoints
+$breakpoint-mobile: 480px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+$breakpoint-wide: 1280px;
+
+// Z-index
+$z-dropdown: 100;
+$z-modal: 1000;
+$z-header: 50;
+
+// Mixins
+@mixin button-primary {
+  background-color: $color-primary;
+  color: $color-white;
+  padding: $spacing-sm $spacing-lg;
+  border-radius: $radius-sm;
+  border: none;
+  font-family: $font-body;
+  font-size: $font-size-body;
+  font-weight: 600;
+  cursor: pointer;
+  transition: $transition-default;
+
+  &:hover {
+    background-color: darken($color-primary, 10%);
+  }
+
+  &:focus {
+    outline: 2px solid $color-accent;
+    outline-offset: 2px;
+  }
+}
+
+@mixin button-secondary {
+  background-color: transparent;
+  color: $color-primary;
+  border: 2px solid $color-accent;
+  padding: $spacing-sm $spacing-lg;
+  border-radius: $radius-sm;
+  font-family: $font-body;
+  font-size: $font-size-body;
+  font-weight: 600;
+  cursor: pointer;
+  transition: $transition-default;
+
+  &:hover {
+    background-color: $color-accent;
+    color: $color-white;
+  }
+
+  &:focus {
+    outline: 2px solid $color-primary;
+    outline-offset: 2px;
+  }
+}
+
+@mixin heading {
+  font-family: $font-heading;
+  color: $color-text;
+  line-height: $line-height-heading;
+  font-weight: 600;
+}
+
+@mixin responsive-text($mobile, $tablet, $desktop) {
+  font-size: $mobile;
+
+  @media (min-width: $breakpoint-tablet) {
+    font-size: $tablet;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    font-size: $desktop;
+  }
+}
