@@ -1,0 +1,132 @@
+[
+  {
+    "name": "theme",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Soft Glow Collective - Theme Settings"
+      },
+      {
+        "type": "paragraph",
+        "content": "Configure colors, typography, and layout for your store."
+      }
+    ]
+  },
+  {
+    "name": "Colors",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Brand Colors"
+      },
+      {
+        "type": "color",
+        "id": "color_primary",
+        "label": "Primary Color (Bluish Pink)",
+        "default": "#B8A0D4"
+      },
+      {
+        "type": "color",
+        "id": "color_primary_light",
+        "label": "Primary Light (Bluish Pink Light)",
+        "default": "#D4A9B8"
+      },
+      {
+        "type": "color",
+        "id": "color_accent",
+        "label": "Accent Color (Gold)",
+        "default": "#D4AF37"
+      },
+      {
+        "type": "color",
+        "id": "color_background",
+        "label": "Background Color",
+        "default": "#FFFFFF"
+      },
+      {
+        "type": "color",
+        "id": "color_text",
+        "label": "Text Color",
+        "default": "#2C2C2C"
+      }
+    ]
+  },
+  {
+    "name": "Typography",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Font Families"
+      },
+      {
+        "type": "paragraph",
+        "content": "Choose fonts that reflect the Soft Glow Collective luxury aesthetic."
+      },
+      {
+        "type": "font_picker",
+        "id": "font_heading",
+        "label": "Heading Font",
+        "default": "playfair_display_n7"
+      },
+      {
+        "type": "font_picker",
+        "id": "font_body",
+        "label": "Body Font",
+        "default": "inter_n4"
+      }
+    ]
+  },
+  {
+    "name": "Store Info",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Store Information"
+      },
+      {
+        "type": "text",
+        "id": "store_name",
+        "label": "Store Name",
+        "default": "Soft Glow Collective"
+      },
+      {
+        "type": "richtext",
+        "id": "store_tagline",
+        "label": "Store Tagline",
+        "default": "<p>Premium Skincare & Beauty Essentials</p>"
+      },
+      {
+        "type": "image_picker",
+        "id": "logo",
+        "label": "Logo Image"
+      }
+    ]
+  },
+  {
+    "name": "Contact",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Contact Information"
+      },
+      {
+        "type": "text",
+        "id": "contact_email",
+        "label": "Contact Email",
+        "default": "support@softglowcollective.com"
+      },
+      {
+        "type": "text",
+        "id": "contact_phone",
+        "label": "Contact Phone",
+        "default": ""
+      },
+      {
+        "type": "text",
+        "id": "contact_instagram",
+        "label": "Instagram Handle",
+        "default": "@softglowcollective"
+      }
+    ]
+  }
+]

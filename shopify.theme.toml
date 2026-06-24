@@ -1,6 +1,6 @@
-name = "SoftGlow Collective - Theme"
-version = "0.1.0"
-# store = "your-store.myshopify.com" # set when using shopify CLI or via env
+name = "Soft Glow Collective - Theme"
+version = "1.0.0"
+store = "softglowcollective.myshopify.com"
 [theme]
   id = ""
   role = "unpublished"
